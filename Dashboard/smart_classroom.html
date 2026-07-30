@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Edge AI AC Monitor</title>
+
+         <link rel="stylesheet" href="SCstyle.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <header>
+                <h1><span>Edge AI</span> AC Monitor</h1>
+            
+            <div class="live-badge">
+                <div class="live-dot"></div>
+                <span>ONLINE</span>
+            </div>
+        </header>
+
+        <div class="simulation-text">
+            <h3>Simulation</h3>
+        </div>    
+
+        <div class="grid">
+            <!-- Occupancy Panel -->
+            <div class="card occupancy-panel low" id="occupancy-panel">
+                <div class="card-title">Current Occupancy</div>
+                <div class="occupancy-level" id="occupancy-level">LOW</div>
+                <div class="people-count">
+                    <span class="num" id="people-count">0</span> people detected
+                </div>
+            </div>
+
+            <div class="card ac-panel">
+                <div class="card-title">Air Conditioning</div>
+                <div class="ac-state">
+                    <div class="ac-indicator off" id="ac-indicator"></div>
+                    <div class="ac-state-text off" id="ac-state-text">OFF</div>
+                </div>
+                <div class="ac-detail">
+                    <div class="ac-detail-item">
+                        <span class="ac-detail-label">Current Room Temperature</span>
+                        <span class="ac-detail-value muted" id="ac-temp">--°C</span>
+                    </div>
+                    <div class="ac-detail-item">
+                        <span class="ac-detail-label">Last Changed</span>
+                        <span class="ac-detail-value" id="ac-last-changed" style="font-size: 18px;">--</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    <div>    
+
+<div class="Live-Feed-text">
+            <h3>Live Feed</h3>
+</div>    
+        
+<div class="grid2">
+
+    <div class="bottom-section">
+
+        <div class="video-panel card">
+            <div class="card-title">Camera Feed</div>
+                <video controls autoplay muted loop>
+                <source src="X-Men.mkv" type="">
+                </video>
+        </div>
+            
+        <div class="right-panel">
+
+            <div class="card1">
+                <div class="card-title1">Current Occupancy</div>
+                <div class="occupancy-level" id="occupancy-level">LOW</div>
+                <div class="people-count">
+                    <span class="num" id="people-count">0</span> people detected
+                </div>
+            </div>
+
+            <div class="card2">
+                <div class="card-title2">Air Conditioning</div>
+                <div class="ac-state">
+                    <div class="ac-indicator off" id="ac-indicator"></div>
+                    <div class="ac-state-text off" id="ac-state-text">OFF</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    </div> 
+            <script src="SC.js"></script>
+    </body>
+</html>
