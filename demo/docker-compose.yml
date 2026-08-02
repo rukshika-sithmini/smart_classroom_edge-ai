@@ -1,0 +1,18 @@
+services:
+  edge-ai-ac-monitor:
+    image: edge_ai_ac_monitor:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edge_ai_ac_monitor
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/api/live_status', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    restart: unless-stopped

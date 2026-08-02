@@ -1,0 +1,8 @@
+flask>=3.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+werkzeug>=3.0.0
+ultralytics>=8.2,<9
+# Keep this tested pair together; newer mismatched wheels can fail to load c10.dll on Windows.
+torch==2.6.0
+torchvision==0.21.0
