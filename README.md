@@ -1,8 +1,5 @@
 # smart_classroom_edge-ai
 An Edge AI-based Smart Classroom system for real-time occupancy detection, activity recognition, and automated AC control using computer vision, Docker, and a live monitoring dashboard.
-# Smart Classroom Edge AI System
-
-A lightweight, privacy-compliant Edge AI prototype that detects classroom occupancy in real time from video feeds, processes inference locally on an edge device, and automatically controls a software-simulated air conditioning system.
 
 ---
 
