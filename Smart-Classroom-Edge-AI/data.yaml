@@ -1,0 +1,16 @@
+path: .
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 2
+names:
+  0: cleaner
+  1: person
+
+roboflow:
+  workspace: sangavi-sriranganathan
+  project: classroom-person-detection-pvi9l
+  version: dataset
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/sangavi-sriranganathan/classroom-person-detection-pvi9l/dataset/dataset
