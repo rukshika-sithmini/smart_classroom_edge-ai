@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edge AI AC Monitor</title>
+        <link rel="stylesheet" href="SCstyle.css">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <!-- Header / title block -->
+            <header>
+                <div>
+                    <h1><span>Edge AI</span> AC Monitor</h1>
+                </div>
+            </header>
+
+            <!-- Live Feed -->
+            <div class="grid2">
+                <div class="section-label">Live feed</div>
+                <div class="bottom-section">
+
+                    <!-- Camera Feed Video Panel -->
+                    <div class="video-panel card">
+                        <div class="video-panel-header">
+                            <div class="card-title">Camera feed</div>
+                            <div class="controls-container">
+                                <button type="button" id="live-camera-btn" class="cam-btn">
+                                    🎥 Live WebCam
+                                </button>
+                                <button type="button" id="upload-btn-trigger" class="upload-btn">
+                                    📁 Upload video
+                                </button>
+                                <label for="video-upload-input" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">
+                                    Upload a classroom video file
+                                </label>
+                                <input type="file" id="video-upload-input" class="video-upload-input" accept="video/*" style="opacity: 0; position: absolute; width: 1px; height: 1px; z-index: -1;">
+                                <span id="upload-status" class="upload-status-text"></span>
+                            </div>
+                        </div>
+                        <div class="stream-container">
+                            <img id="live-video-feed" src="/video_feed" alt="Live AI camera feed">
+                        </div>
+                        <div class="active-video-info">
+                            Active source: <span id="current-video-filename">No video source active</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel (Live Feed Metrics) -->
+                    <div class="right-panel">
+
+                        <!-- Live Occupancy Card -->
+                        <div class="card1 low" id="live-occupancy-panel">
+                            <div class="card-title">Current occupancy</div>
+                            <div class="occupancy-level" id="live-occupancy-level">LOW</div>
+                            <div class="people-count">
+                                <span class="num" id="live-people-count">0</span> people detected
+                            </div>
+                        </div>
+
+                        <!-- Live AC Card -->
+                        <div class="card2" id="live-ac-panel">
+                            <div class="card-title">Air conditioning</div>
+                            <div class="ac-state">
+                                <div class="ac-indicator off" id="live-ac-indicator"></div>
+                                <div class="ac-state-text off" id="live-ac-state-text">OFF</div>
+                            </div>
+                            <div class="ac-detail">
+                                <div class="ac-detail-item">
+                                    <span class="ac-detail-label">Set temp</span>
+                                    <span class="ac-detail-value muted" id="live-ac-temp">--°C</span>
+                                </div>
+                                <div class="ac-detail-item">
+                                    <span class="ac-detail-label">Running time</span>
+                                    <span class="ac-detail-value" id="live-ac-run-time" style="color: #38bdf8; font-size: 20px;">00:00:00</span>
+                                </div>
+                                <div class="ac-detail-item">
+                                    <span class="ac-detail-label">Last changed</span>
+                                    <span class="ac-detail-value" id="live-ac-last-changed" style="font-size: 15px;">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Prediction Confidence & Analytics Card -->
+                        <div class="card3" id="live-ai-analytics-panel">
+                            <div class="card-title">AI Prediction Confidence</div>
+                            <div class="confidence-value-container">
+                                <span class="confidence-num" id="live-confidence-value">--%</span>
+                                <span class="confidence-badge" id="live-confidence-badge">NO DETECTIONS</span>
+                            </div>
+                            <div class="confidence-bar-wrapper">
+                                <div class="confidence-bar-fill" id="live-confidence-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="detection-stats-grid">
+                                <div class="stat-box">
+                                    <span class="stat-label">Students</span>
+                                    <span class="stat-val" id="live-student-count">0</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">Cleaners</span>
+                                    <span class="stat-val" id="live-cleaner-count">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <span>EDGE-AI-CLASSROOM · REV 1.0</span>
+                <span>Flask · YOLO · OpenCV</span>
+            </footer>
+
+        </div>
+
+        <script src="SC.js"></script>
+    </body>
+</html>
